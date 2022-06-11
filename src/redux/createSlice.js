@@ -7,23 +7,17 @@ const initialState = [
   { id: "id-4", name: "Annie Copeland", number: "227-91-26" },
 ];
 
-export const counterSlice = createSlice({
-  name: "phonebook",
+export const contactsSlice = createSlice({
+  name: "contacts",
   initialState,
   reducers: {
-    add: (state) => {
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
-    },
+    addContacts: (state, { payload }) => [payload, ...state],
+    deleteContacts: (state, { payload }) =>
+      state.filter(({ id }) => id !== payload),
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+export const { addContacts, deleteContacts } = contactsSlice.actions;
 
-export default counterSlice.reducer;
+export default contactsSlice.reducer;

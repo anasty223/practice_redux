@@ -1,7 +1,13 @@
 import "./App.css";
+import Container from "./components/Container/Container";
+import Form from "./components/Form/Form";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <Container>
+      <Form />
+    </Container>
+  );
 }
 
 export default App;
