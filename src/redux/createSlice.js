@@ -7,7 +7,7 @@ const initialState = [
   { id: "id-4", name: "Annie Copeland", number: "227-91-26" },
 ];
 
-export const contactsSlice = createSlice({
+const contactsSlice = createSlice({
   name: "contacts",
   initialState,
   reducers: {
@@ -20,4 +20,4 @@ export const contactsSlice = createSlice({
 // Action creators are generated for each case reducer function
 export const { addContacts, deleteContacts } = contactsSlice.actions;
 
-export default contactsSlice.reducer;
+export const contactsReducer = contactsSlice.reducer;
