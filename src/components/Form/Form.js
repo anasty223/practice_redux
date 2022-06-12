@@ -12,7 +12,9 @@ export default function Form() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newName = contacts.find((contact) => contact.name === name);
+    const newName = contacts.find(
+      ({ contact }) => contact.name.toLowerCase() === name.toLowerCase()
+    );
     if (newName) {
       alert("This name is already in the phonebook ");
     } else {

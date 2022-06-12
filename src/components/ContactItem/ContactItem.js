@@ -3,7 +3,9 @@ export default function ContactItem({ id, name, number, onDeleteContact }) {
     <li key={id}>
       <h3>{name}</h3>
       <p>{number}</p>
-      <button onClick={onDeleteContact}>delete contact</button>
+      <button type="submit" onClick={() => onDeleteContact(id)}>
+        delete contact
+      </button>
     </li>
   );
 }

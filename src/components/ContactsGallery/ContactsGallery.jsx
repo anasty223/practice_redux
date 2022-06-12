@@ -12,6 +12,7 @@ export default function ContactsGallery() {
       {contacts.map(({ id, name, number }) => (
         <ContactItem
           key={id}
+          id={id}
           name={name}
           number={number}
           onDeleteContact={(id) => dispatch(deleteContacts(id))}
