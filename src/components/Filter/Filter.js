@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { getFilter } from "../../redux/selectors";
+import { changeFilter } from "../../redux/filterSlice";
 
 export default function Filter() {
   const filter = useSelector(getFilter);
@@ -12,7 +13,7 @@ export default function Filter() {
         <input
           type="text"
           value={filter}
-          onChange={(e) => dispatch(e.currentTarget.value)}
+          onChange={(e) => dispatch(changeFilter(e.currentTarget.value))}
         />
       </label>
     </>
