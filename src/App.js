@@ -1,17 +1,23 @@
-import "./App.css";
-import ContactsGallery from "./components/ContactsGallery/ContactsGallery";
-import Container from "./components/Container/Container";
-import Filter from "./components/Filter/Filter";
+import { useState } from "react";
 import Form from "./components/Form/Form";
+import ContactsList from "./components/ContactsList/ContactsList";
+import Filter from "./components/Filter/Filter";
+import { nanoid } from "nanoid";
+import Div from "./components/Container/Container";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-function App() {
+export default function App() {
   return (
-    <Container>
+    <Div>
+      <h1>Phonebook</h1>
+
       <Form />
+
       <Filter />
-      <ContactsGallery />
-    </Container>
+      <h2>Contacts</h2>
+      <ContactsList />
+      <ToastContainer />
+    </Div>
   );
 }
-
-export default App;
